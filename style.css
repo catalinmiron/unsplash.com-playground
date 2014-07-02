@@ -1,0 +1,89 @@
+/* Import Roboto */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+
+
+/* my custom reset ( lazy mfucker ) */
+
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translate3d(0,0,0), translateZ(0);
+}
+
+/* Messy things are going on above :) */
+
+body {
+  font: 300 16px/1.5em 'Roboto', sans-serif;
+}
+h1,h2 {
+  width: 100%;
+  height: 25vh;
+  line-height: 25vh;
+  background: coral; /* Just because i love coral */
+  font-weight: 100;
+  color: white;
+  text-align: center;
+}
+a {
+  color: inherit;
+  font-weight: 500;
+}
+h2 {
+  background: rgba(0,0,0,.5);
+  position: absolute;
+  line-height: 1em;
+  padding: 12.5vh 0;
+  height: auto;
+  box-sizing: border-box;
+  bottom: 3vh;
+  width: 100%;
+}
+h2 span {
+  font-size: 14px;
+}
+.image-container {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-position: center center;
+  -webkit-background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-attachment: fixed;
+  border-bottom: 5px solid #000;
+}
+.image-caption {
+  height: 20%;
+  position: relative;
+  z-index: 2;
+}
+.image-container img {
+  display: none;
+}
+
+/* Responsive */
+/*
+  Fix some display issue on tables and mobile for background-size: cover; which
+  isn't supported o.0
+*/
+
+@media only screen and (max-width: 479px) {
+
+    .image-container {
+      background-size: contain;
+      background-attachment: scroll;
+      height: 250px;
+      min-height: 250px;
+      font-size: 12px;
+    }
+    .image-caption h2{
+      padding: 20px 0;
+    }
+    .image-container img {
+      display: block;
+      position: absolute;
+      z-index:1;
+      width: 100%;
+      height: auto;
+    }
+  }

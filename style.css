@@ -72,7 +72,7 @@ h2 span {
 @media only screen and (max-width: 479px) {
 
     .image-container {
-      background-size: contain;
+      background-image: none;
       background-attachment: scroll;
       height: 250px;
       min-height: 250px;

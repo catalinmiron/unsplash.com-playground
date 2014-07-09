@@ -1,6 +1,16 @@
 Unsplash - Tumblr API playground
 =======================
 
+###Todos:
+- Add more meta to each image
+- Add more interactivity on scroll
+- Add sliding effect, one by one image ( while scrolling )
+- Make the app full-screen
+- Make a jquery plugin
+- Move to a **new house**
+- Go to **Kenya** and **Morocco**
+- Do you have other thoughts ?
+
 [Unsplash.com](http://www.unsplash.com) redesign. Minimalist, parallax effect, but
 still need to add more details for photos.
 

@@ -2,8 +2,7 @@ $(document).ready(function(){
   var API_KEY = "0vnPZgYAxI84PbLXDhSsQX3snzk5OSfJdyttEA28en26KvwWQ3&",
       link = "http://api.tumblr.com/v2/blog/unsplash.tumblr.com/posts/photo/?api_key=" + API_KEY + "&offset=",
       offset = 0,
-      $mainContainer = $('.unsplash-photos'),
-      timeout;
+      $mainContainer = $('.unsplash-photos');
   function fetchData(offset){
         $.ajax({
           url: link + offset,
@@ -37,28 +36,28 @@ $(document).ready(function(){
           // todo: oncomplete hide loading container
         });
   }
+
+  // Call fetchData without offset to get the first 20 images
   fetchData();
 
-// Hack to call just once the fetchData method and avoid multiple calls
-
-  $(window).scroll(function() {
-    if(typeof timeout == "number") {
-      window.clearTimeout(timeout);
-    }
-    timeout = window.setTimeout( check, 500);
-  });
+  // Use throttle to call just once fetchData without worry to much about
+  // re-fatching data with other offset
+  // http://underscorejs.org/#throttle
+  var checkForFetching = _.throttle(check, 1200);
 
   function check(){
-    var window_height = $mainContainer.height();
-    var document_height = $(window).height();
-    var scroll_position = $(window).scrollTop();
-    if (window_height - (document_height + scroll_position) < 2000) {
+    var window_height = $mainContainer.height(),
+        document_height = $(window).height(),
+        scroll_position = $(window).scrollTop();
+    if (window_height - (document_height + scroll_position) < 5000) {
       // increase offset with 20 and re-call fetchData with the new offset
       // todo: add loading container
       offset+= 20;
       fetchData(offset);
     }
   }
+
+  $(window).scroll(checkForFetching);
 
 });
 

@@ -5,6 +5,7 @@ Unsplash - Tumblr API playground
 - ~~Add underscore.js and refactor js code for fetching when scrolling down the page~~ Thnx to **Amstel Beer** :beer:
 - ~~Add more meta to each image~~
 - ~~Add different size for images on small devices ( as fallback )~~
+- Test this plugin [Intense Image](https://github.com/tholman/intense-images)
 - Add more interactivity on scroll
 - Add sliding effect, one by one image ( while scrolling )
 - Make the app full-screen
